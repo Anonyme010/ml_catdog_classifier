@@ -1,0 +1,66 @@
+# Training Configuration
+# Hyperparameters for cat vs dog binary classification
+
+# Dataset
+dataset:
+  name: "CIFAR-10-binary"
+  classes: ["cat", "dog"]
+  image_size: [32, 32]
+  train_samples: 8000  # After cleaning
+  val_samples: 1000
+  test_samples: 2000
+
+# Model
+model:
+  name: "ResNet50"
+  pretrained: true
+  num_classes: 2
+  dropout_rate: 0.5
+
+# Training
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001  # L2 regularization
+  max_epochs: 50
+  optimizer: "Adam"
+  loss_function: "CrossEntropyLoss"
+
+# Early Stopping
+early_stopping:
+  patience: 5
+  monitor_metric: "val_loss"
+  mode: "min"
+
+# Learning Rate Scheduling
+scheduler:
+  type: "ReduceLROnPlateau"
+  factor: 0.5
+  patience: 3
+  min_lr: 1e-7
+
+# Data Augmentation
+augmentation:
+  enabled: true
+  random_flip: true
+  random_rotation: 15
+  color_jitter: true
+  brightness: 0.2
+  contrast: 0.2
+  saturation: 0.2
+  random_crop: true
+  normalization:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+# Reproducibility
+reproducibility:
+  seed: 42
+  deterministic: true
+
+# Paths
+paths:
+  data_dir: "./data"
+  checkpoint_dir: "./checkpoints"
+  log_dir: "./logs"
+  output_dir: "./results"

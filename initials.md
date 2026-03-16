@@ -57,3 +57,10 @@ ml-cat-dog-classifier/
 ├── initials.md                      # Documented initialisation 
 └── .gitignore                       # Git ignore patterns
 ```
+
+### ✓ Commit 1: Initial Project Setup
+**Description:** Foundation and setup files for the ML project.
+
+
+### ✓ Commit 2: Data Pipeline & Model Architecture 
+**Description:** Implement data loading, preprocessing, and model architecture.

@@ -8,7 +8,7 @@ Build a binary image classification model to classify CIFAR-10 images as cats or
 ### Overall Architecture
 - **Model**: ResNet50 (pretrained on ImageNet)
 - **Dataset**: CIFAR-10 (binary classification: cats vs dogs)
-- **Framework**: PyTorch 2.0.1 + TorchVision 0.15.2
+- **Framework**: PyTorch + TorchVision (gooleColab)
 - **Training Environment**: Google Colab T4 GPU
 - **Languages & Tools**: Python, Jupyter Notebook, Git
 
@@ -64,3 +64,48 @@ ml-cat-dog-classifier/
 
 ### ✓ Commit 2: Data Pipeline & Model Architecture 
 **Description:** Implement data loading, preprocessing, and model architecture.
+
+### ✓  Commit 3: Training & Evaluation (READY TO PUSH)
+**Description:** Training pipeline, evaluation, and visualizations
+
+
+## Key Results
+
+| Metric | Value |
+|--------|-------|
+| Test Accuracy | 80.70% |
+| Precision | 0.8499 |
+| Recall | 0.7419 |
+| F1-Score | 0.7922 |
+| ROC-AUC | 0.8909 |
+
+
+**Error Pattern:**
+68 cat→dog confusion
+131 dog→cat confusion
+
+## Training Execution
+
+All training done in Google Colab notebook (`notebooks/Project.ipynb`):
+1. Installs dependencies
+2. Downloads CIFAR-10
+3. Cleans & preprocesses data
+4. Creates model
+5. Trains with early stopping
+6. Evaluates on test set
+7. Generates visualizations
+
+Run with: Open notebook in Colab → Ctrl+F9 (Run all)
+
+
+## Results & Artifacts
+
+Results from the training run are stored in the `downloaded_results/` folder:
+
+- `best_model.pt` - Best model checkpoint (saved at epoch 21)
+- `training_curves.png` - Plot of training and validation loss/accuracy over epochs
+- `confusion_matrix.png` - Confusion matrix visualization on test set
+- `roc_curve.png` - ROC curve with AUC score
+- `training.log` - Complete training log with epoch-by-epoch metrics
+
+**Author:** HASNAOUI Walid , github username : "Anonyme010"

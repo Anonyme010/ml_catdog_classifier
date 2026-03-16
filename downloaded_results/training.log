@@ -1,0 +1,73 @@
+Training Log - CIFAR-10 Binary Classification (Cats vs Dogs)
+======================================================================
+Model: ResNet50 (pretrained on ImageNet)
+Dataset: CIFAR-10 (cats=class 3, dogs=class 5)
+Training Date: 2026-03-13 10:20:53
+======================================================================
+
+TRAINING CONFIGURATION:
+- Loss Function: CrossEntropyLoss + L2 regularization (λ=0.0001)
+- Optimizer: Adam (lr=0.001, weight_decay=0.0001)
+- Batch Size: 64
+- Early Stopping: Patience=5 epochs
+- Learning Rate Scheduler: ReduceLROnPlateau (factor=0.5, patience=3)
+
+DATASET STATISTICS:
+- Training images: 8000
+- Validation images: 1000
+- Test images: 1000
+- Total: 10000 images
+- Classes: 2 (Cat=0, Dog=1)
+
+TRAINING HISTORY:
+epoch=1, train_loss=0.6917, train_acc=59.95%, val_loss=0.6608, val_acc=64.20%, val_f1=0.6558
+epoch=2, train_loss=0.6033, train_acc=68.95%, val_loss=0.5544, val_acc=72.10%, val_f1=0.6752
+epoch=3, train_loss=0.5500, train_acc=72.81%, val_loss=0.6135, val_acc=71.20%, val_f1=0.6674
+epoch=4, train_loss=0.5206, train_acc=74.75%, val_loss=0.5323, val_acc=73.40%, val_f1=0.7452
+epoch=5, train_loss=0.5053, train_acc=76.51%, val_loss=0.5547, val_acc=72.10%, val_f1=0.7350
+epoch=6, train_loss=0.4879, train_acc=76.62%, val_loss=0.5713, val_acc=70.60%, val_f1=0.6192
+epoch=7, train_loss=0.4656, train_acc=77.90%, val_loss=0.4845, val_acc=75.40%, val_f1=0.7242
+epoch=8, train_loss=0.4631, train_acc=78.66%, val_loss=0.4675, val_acc=76.20%, val_f1=0.7725
+epoch=9, train_loss=0.4412, train_acc=79.41%, val_loss=0.4531, val_acc=77.80%, val_f1=0.7784
+epoch=10, train_loss=0.4374, train_acc=79.29%, val_loss=0.4536, val_acc=79.20%, val_f1=0.7833
+epoch=11, train_loss=0.4301, train_acc=80.59%, val_loss=0.4834, val_acc=75.80%, val_f1=0.7747
+epoch=12, train_loss=0.4290, train_acc=80.74%, val_loss=0.4643, val_acc=77.50%, val_f1=0.7711
+epoch=13, train_loss=0.4252, train_acc=80.66%, val_loss=0.4586, val_acc=77.40%, val_f1=0.7570
+epoch=14, train_loss=0.3836, train_acc=82.42%, val_loss=0.4453, val_acc=80.60%, val_f1=0.8008
+epoch=15, train_loss=0.3800, train_acc=83.38%, val_loss=0.4270, val_acc=78.60%, val_f1=0.7752
+epoch=16, train_loss=0.3686, train_acc=83.83%, val_loss=0.4315, val_acc=78.70%, val_f1=0.8000
+epoch=17, train_loss=0.3493, train_acc=84.10%, val_loss=0.4149, val_acc=81.10%, val_f1=0.8066
+epoch=18, train_loss=0.3505, train_acc=84.55%, val_loss=0.4858, val_acc=78.50%, val_f1=0.7576
+epoch=19, train_loss=0.3476, train_acc=84.65%, val_loss=0.3944, val_acc=81.30%, val_f1=0.7938
+epoch=20, train_loss=0.3405, train_acc=85.08%, val_loss=0.3967, val_acc=81.70%, val_f1=0.8043
+epoch=21, train_loss=0.3413, train_acc=85.34%, val_loss=0.3860, val_acc=82.10%, val_f1=0.8094
+epoch=22, train_loss=0.3392, train_acc=84.96%, val_loss=0.4140, val_acc=80.80%, val_f1=0.8037
+epoch=23, train_loss=0.3300, train_acc=85.86%, val_loss=0.4185, val_acc=81.80%, val_f1=0.8216
+epoch=24, train_loss=0.3253, train_acc=85.79%, val_loss=0.4312, val_acc=81.20%, val_f1=0.8157
+epoch=25, train_loss=0.3198, train_acc=86.30%, val_loss=0.4034, val_acc=81.00%, val_f1=0.7894
+epoch=26, train_loss=0.2952, train_acc=87.33%, val_loss=0.4063, val_acc=81.40%, val_f1=0.8094
+
+======================================================================
+BEST MODEL CHECKPOINT:
+- Best Epoch: 21
+- Best Validation Loss: 0.3860
+- Checkpoint Path: /tmp/best_model.pt
+
+TEST SET RESULTS:
+- Loss: 0.4139
+- Accuracy: 80.70%
+- Precision: 0.8499
+- Recall: 0.7419
+- F1-Score: 0.7922
+- ROC-AUC: 0.8909
+
+GENERATED ARTIFACTS:
+✓ Best model checkpoint: best_model.pt
+✓ Training curves: training_curves.png
+✓ Confusion matrix: confusion_matrix.png
+✓ ROC curve: roc_curve.png
+✓ Training log: training.log
+
+======================================================================
+Training completed successfully!
+======================================================================
